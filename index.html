@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Insight Card</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #fff;
+    color: #333;
+  }
+  .card {
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .title { font-size: 18px; font-weight: bold; }
+  .subtitle { font-size: 14px; color: #777; margin-bottom: 10px; }
+  .stats, .section {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .stats div, .section div { margin: 3px 0; }
+  .highlight {
+    font-size: 13px;
+    background: #f5f9ff;
+    padding: 8px;
+    border-left: 3px solid #0073e6;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="title" id="locationName">Bonifacio Global City, NCR</div>
+  <div class="subtitle" id="tagline">Prime financial and lifestyle hub</div>
+
+  <div class="stats" id="quickStats">
+    <div>👥 Population: <span id="population">1.2M</span> | Density: <span id="density">8,000/km²</span></div>
+    <div>💰 Income: <span id="income">₱45k/mo</span></div>
+    <div>🚶 Foot Traffic: <span id="traffic">25k/day</span></div>
+    <div>🏢 Rent: <span id="retailRent">₱1,200/sqm</span> retail | <span id="officeRent">₱900/sqm</span> office</div>
+  </div>
+
+  <div class="section" id="accessInfo">
+    <div>📍 2km from MRT-3</div>
+    <div>🛣 Linked to NLEX & SLEX</div>
+    <div>🚆 Skyway Extension: 2026</div>
+  </div>
+
+  <div class="section" id="amenities">
+    <div>🏫 5 schools | 🏥 2 hospitals | 🛍 3 malls</div>
+    <div>🏢 Anchors: Ayala Malls, TechPark, BPO Hub</div>
+    <div>📈 Occupancy: 95%</div>
+  </div>
+
+  <div class="highlight" id="insight">
+    Strong rental demand driven by BPO expansion and improved connectivity.
+  </div>
+</div>
+
+</body>
+</html>
