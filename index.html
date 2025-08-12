@@ -3,12 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Market Insight Cards</title>
+<title>Market Insight Cards - North Luzon</title>
 <style>
   body {
     font-family: Arial, sans-serif;
-    background: #f8f9fa;
-    margin: 0; padding: 20px;
+    background: #000;
+    margin: 0; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -16,13 +23,24 @@
   }
   .card {
     width: 300px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: white;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
-  .title { font-size: 18px; font-weight: bold; }
-  .subtitle { font-size: 14px; color: #777; margin-bottom: 10px; }
+  .title {
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #4caf50; /* Green highlight */
+  }
+  .subtitle { 
+    font-size: 14px; 
+    color: #ccc; 
+    margin-bottom: 10px; 
+  }
   .section {
     font-size: 13px;
     margin-bottom: 8px;
@@ -30,9 +48,9 @@
   .section div { margin: 4px 0; }
   .highlight {
     font-size: 13px;
-    background: #f5f9ff;
+    background: rgba(76, 175, 80, 0.15); /* Semi-transparent green */
     padding: 8px;
-    border-left: 3px solid #0073e6;
+    border-left: 3px solid #4caf50;
     border-radius: 6px;
     font-weight: bold;
   }
@@ -43,62 +61,54 @@
 </head>
 <body>
 
+<div class="container">
+
 <!-- Card 1 – Overview -->
 <div class="card">
-  <div class="title">Bonifacio Global City, NCR</div>
-  <div class="subtitle">Prime financial and lifestyle hub</div>
+  <div class="title">North Luzon</div>
+  <div class="subtitle">Emerging commercial and residential hub</div>
   <div class="section">
-    <div>👥 Population: 1.2M | Density: 8,000/km²</div>
-    <div>💰 Avg Household Income: ₱45k/mo</div>
-    <div>🚶 Foot Traffic: 25k/day</div>
-    <div>🏢 Retail Rent: ₱1,200/sqm | Office Rent: ₱900/sqm</div>
+    <div>👥 Population: 2.4M | Density: 1,200/km²</div>
+    <div>💰 Avg Household Income: ₱32k/mo</div>
+    <div>🚶 Foot Traffic: 15k/day</div>
+    <div>🏢 Retail Rent: ₱800/sqm | Office Rent: ₱600/sqm</div>
   </div>
-  <div class="highlight">High-growth hub attracting both corporate and retail investments.</div>
+  <div class="highlight">Strategic location with expanding business zones.</div>
 </div>
 
 <!-- Card 2 – Accessibility -->
 <div class="card">
   <div class="title">Accessibility & Infrastructure</div>
   <div class="section">
-    <div>📍 2km from MRT-3</div>
-    <div>🛣 Linked to NLEX & SLEX</div>
-    <div>🚆 Skyway Extension: 2026</div>
-    <div>🚌 Multiple public transport routes</div>
+    <div>📍 Connected via SCTEX & TPLEX</div>
+    <div>🛣 NLEX Expansion ongoing</div>
+    <div>🚆 North-South Commuter Railway (2028)</div>
+    <div>🚌 Provincial bus terminals nearby</div>
   </div>
-  <div class="highlight">Improved connectivity projected to boost property values by 12%.</div>
+  <div class="highlight">Transport upgrades expected to increase trade flow.</div>
 </div>
 
 <!-- Card 3 – Amenities -->
 <div class="card">
   <div class="title">Amenities & Commercial Profile</div>
   <div class="section">
-    <div>🏫 5 schools | 🏥 2 hospitals | 🛍 3 malls</div>
-    <div>🏢 Anchors: Ayala Malls, TechPark, BPO Hub</div>
-    <div>📈 Occupancy: 95%</div>
+    <div>🏫 8 schools | 🏥 3 hospitals | 🛍 4 malls</div>
+    <div>🏢 Anchors: Ayala Malls, Industrial Parks</div>
+    <div>📈 Occupancy: 88%</div>
   </div>
-  <div class="highlight">Stable occupancy ensures consistent rental returns.</div>
+  <div class="highlight">Balanced growth in residential and industrial sectors.</div>
 </div>
 
 <!-- Card 4 – Trends Graph -->
 <div class="card">
   <div class="title">Foot Traffic Trends</div>
   <canvas id="trafficChart"></canvas>
-  <div class="highlight">Foot traffic peaks during Q4 holiday season.</div>
+  <div class="highlight">Steady rise in Q2 due to tourism season.</div>
 </div>
 
-<!-- Future script for live updates -->
-<!--
-<script>
-  // Example script for pulling real-time data in the future
-  fetch('https://example.com/market-data.json')
-    .then(res => res.json())
-    .then(data => {
-      // Populate card fields dynamically
-    });
-</script>
--->
+</div>
 
-<!-- Chart.js CDN for the graph -->
+<!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx = document.getElementById('trafficChart');
@@ -108,9 +118,9 @@
       labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       datasets: [{
         label: 'Daily Foot Traffic',
-        data: [18000, 20000, 22000, 21000, 23000, 25000, 27000],
-        borderColor: '#0073e6',
-        backgroundColor: 'rgba(0, 115, 230, 0.2)',
+        data: [12000, 13000, 14000, 15000, 16000, 15500, 17000],
+        borderColor: '#4caf50',
+        backgroundColor: 'rgba(76, 175, 80, 0.2)',
         fill: true,
         tension: 0.3
       }]
@@ -119,7 +129,8 @@
       responsive: true,
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true }
+        y: { beginAtZero: true, ticks: { color: 'white' } },
+        x: { ticks: { color: 'white' } }
       }
     }
   });
