@@ -13,48 +13,61 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: transparent; /* Transparent background */
   }
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
+    background: none;
+    padding: 40px;
   }
   .card {
     width: 300px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 15px;
-    color: white;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 20px;
+    color: #fff;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   .title {
-    font-size: 18px; 
+    font-size: 20px; 
     font-weight: bold; 
-    color: #4caf50; /* Green highlight */
+    color: #4caf50;
+    margin-bottom: 4px;
   }
   .subtitle { 
-    font-size: 14px; 
-    color: #ccc; 
+    font-size: 15px; 
+    color: #e0e0e0; 
     margin-bottom: 10px; 
   }
   .section {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
   .section div { margin: 4px 0; }
   .highlight {
-    font-size: 13px;
-    background: rgba(76, 175, 80, 0.15); /* Semi-transparent green */
-    padding: 8px;
+    font-size: 14px;
+    background: rgba(76, 175, 80, 0.18);
+    padding: 10px;
     border-left: 3px solid #4caf50;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
+    color: #fff;
+    margin-top: 8px;
   }
   canvas {
     max-width: 100%;
+    margin-top: 10px;
+    background: transparent;
+    border-radius: 8px;
   }
 </style>
 </head>
@@ -62,52 +75,51 @@
 
 <div class="container">
 
-<!-- Card 1 – Overview -->
-<div class="card">
-  <div class="title">North Luzon</div>
-  <div class="subtitle">Emerging commercial and residential hub</div>
-  <div class="section">
-    <div>👥 Population: 2.4M | Density: 1,200/km²</div>
-    <div>💰 Avg Household Income: ₱32k/mo</div>
-    <div>🚶 Foot Traffic: 15k/day</div>
-    <div>🏢 Retail Rent: ₱800/sqm | Office Rent: ₱600/sqm</div>
+  <!-- Card 1 – Overview -->
+  <div class="card">
+    <div class="title">North Luzon</div>
+    <div class="subtitle">Emerging commercial and residential hub</div>
+    <div class="section">
+      <div>👥 Population: 2.4M | Density: 1,200/km²</div>
+      <div>💰 Avg Household Income: ₱32k/mo</div>
+      <div>🚶 Foot Traffic: 15k/day</div>
+      <div>🏢 Retail Rent: ₱800/sqm | Office Rent: ₱600/sqm</div>
+    </div>
+    <div class="highlight">Strategic location with expanding business zones.</div>
   </div>
-  <div class="highlight">Strategic location with expanding business zones.</div>
-</div>
 
-<!-- Card 2 – Accessibility -->
-<div class="card">
-  <div class="title">Accessibility & Infrastructure</div>
-  <div class="section">
-    <div>📍 Connected via SCTEX & TPLEX</div>
-    <div>🛣 NLEX Expansion ongoing</div>
-    <div>🚆 North-South Commuter Railway (2028)</div>
-    <div>🚌 Provincial bus terminals nearby</div>
+  <!-- Card 2 – Accessibility -->
+  <div class="card">
+    <div class="title">Accessibility & Infrastructure</div>
+    <div class="section">
+      <div>📍 Connected via SCTEX & TPLEX</div>
+      <div>🛣 NLEX Expansion ongoing</div>
+      <div>🚆 North-South Commuter Railway (2028)</div>
+      <div>🚌 Provincial bus terminals nearby</div>
+    </div>
+    <div class="highlight">Transport upgrades expected to increase trade flow.</div>
   </div>
-  <div class="highlight">Transport upgrades expected to increase trade flow.</div>
-</div>
 
-<!-- Card 3 – Amenities -->
-<div class="card">
-  <div class="title">Amenities & Commercial Profile</div>
-  <div class="section">
-    <div>🏫 8 schools | 🏥 3 hospitals | 🛍 4 malls</div>
-    <div>🏢 Anchors: Ayala Malls, Industrial Parks</div>
-    <div>📈 Occupancy: 88%</div>
+  <!-- Card 3 – Amenities -->
+  <div class="card">
+    <div class="title">Amenities & Commercial Profile</div>
+    <div class="section">
+      <div>🏫 8 schools | 🏥 3 hospitals | 🛍 4 malls</div>
+      <div>🏢 Anchors: Ayala Malls, Industrial Parks</div>
+      <div>📈 Occupancy: 88%</div>
+    </div>
+    <div class="highlight">Balanced growth in residential and industrial sectors.</div>
   </div>
-  <div class="highlight">Balanced growth in residential and industrial sectors.</div>
-</div>
 
-<!-- Card 4 – Trends Graph -->
-<div class="card">
-  <div class="title">Foot Traffic Trends</div>
-  <canvas id="trafficChart"></canvas>
-  <div class="highlight">Steady rise in Q2 due to tourism season.</div>
-</div>
+  <!-- Card 4 – Trends Graph -->
+  <div class="card">
+    <div class="title">Foot Traffic Trends</div>
+    <canvas id="trafficChart"></canvas>
+    <div class="highlight">Steady rise in Q2 due to tourism season.</div>
+  </div>
 
 </div>
 
-<!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx = document.getElementById('trafficChart');
